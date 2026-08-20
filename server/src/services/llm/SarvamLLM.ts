@@ -60,7 +60,7 @@ Return ONLY the JSON object requested in the system prompt.
           },
 
           body: JSON.stringify({
-            model: "sarvam-105b-conversations",
+            model: "sarvam-105b",
 
             messages,
 

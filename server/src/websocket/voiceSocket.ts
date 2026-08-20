@@ -99,9 +99,8 @@ export function setupVoiceSocket(server: any) {
   );
 }
 
-// ======================================================
+
 // HANDLE EVENT
-// ======================================================
 
 async function handleEvent(
   event: ClientEvent,
@@ -163,9 +162,9 @@ async function handleEvent(
   }
 }
 
-// ======================================================
+
 // START CALL
-// ======================================================
+
 
 async function handleStartCall(
   ws: WebSocket,
@@ -253,9 +252,8 @@ async function handleStartCall(
   }
 }
 
-// ======================================================
+
 // AUDIO START
-// ======================================================
 
 function handleAudioStart(
   ws: WebSocket,
@@ -283,9 +281,9 @@ function handleAudioStart(
   );
 }
 
-// ======================================================
+
 // AUDIO CHUNK
-// ======================================================
+
 
 function handleAudioChunk(
   ws: WebSocket,
@@ -334,9 +332,9 @@ function handleAudioChunk(
   }
 }
 
-// ======================================================
+
 // AUDIO END
-// ======================================================
+
 
 async function handleAudioEnd(
   ws: WebSocket,
@@ -391,9 +389,9 @@ async function handleAudioEnd(
       return;
     }
 
-    // ==============================================
+    
     // STT
-    // ==============================================
+    
 
     console.log(
       `[${sessionId}] Sending audio to Sarvam STT`
@@ -426,9 +424,9 @@ async function handleAudioEnd(
       text: transcript,
     });
 
-    // ==============================================
+    
     // SAVE USER MESSAGE
-    // ==============================================
+    
 
     sessionStore.addMessage(
       sessionId,
@@ -439,10 +437,9 @@ async function handleAudioEnd(
       }
     );
 
-    // ==============================================
+    
     // LLM
-    // ==============================================
-
+    
     console.log(
       `[${sessionId}] Processing conversation`
     );
